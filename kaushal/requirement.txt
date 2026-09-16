@@ -1,0 +1,5 @@
+asgiref==3.11.0
+Django==5.2.9
+django-tinymce==5.0.0
+pillow==12.1.0
+sqlparse==0.5.5

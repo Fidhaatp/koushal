@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>API Test</title>
+    <style>
+        body { font-family: Arial; margin: 20px; }
+        .test-section { margin: 20px 0; padding: 10px; border: 1px solid #ccc; }
+        button { padding: 10px 20px; background: #007bff; color: white; border: none; cursor: pointer; }
+        button:hover { background: #0056b3; }
+        .result { margin-top: 10px; padding: 10px; background: #f0f0f0; border-radius: 5px; }
+        .error { background: #ffcccc; }
+        .success { background: #ccffcc; }
+    </style>
+</head>
+<body>
+    <h1>API Endpoint Testing</h1>
+
+    <div class="test-section">
+        <h2>Test 1: Get Courses for Course Type 1 (Undergraduate)</h2>
+        <button onclick="testGetCourses(1)">Test Get Courses</button>
+        <div id="result1" class="result" style="display:none;"></div>
+    </div>
+
+    <div class="test-section">
+        <h2>Test 2: Get Faculty for Course ID</h2>
+        <input type="number" id="courseId" placeholder="Enter Course ID" value="1">
+        <button onclick="testGetFaculty()">Test Get Faculty</button>
+        <div id="result2" class="result" style="display:none;"></div>
+    </div>
+
+    <div class="test-section">
+        <h2>Test 3: Get Streams for Course ID</h2>
+        <input type="number" id="courseIdStreams" placeholder="Enter Course ID" value="1">
+        <button onclick="testGetStreams()">Test Get Streams</button>
+        <div id="result3" class="result" style="display:none;"></div>
+    </div>
+
+    <script>
+        function testGetCourses(courseTypeId) {
+            const url = `/boardreg/api/get-courses/?course_type_id=${courseTypeId}`;
+            console.log('Testing URL:', url);
+            
+            fetch(url)
+                .then(response => {
+                    if (!response.ok) throw new Error(`HTTP ${response.status}`);
+                    return response.json();
+                })
+                .then(data => {
+                    const resultDiv = document.getElementById('result1');
+                    resultDiv.style.display = 'block';
+                    resultDiv.className = 'result success';
+                    resultDiv.innerHTML = `<strong>Success!</strong><pre>${JSON.stringify(data, null, 2)}</pre>`;
+                })
+                .catch(error => {
+                    const resultDiv = document.getElementById('result1');
+                    resultDiv.style.display = 'block';
+                    resultDiv.className = 'result error';
+                    resultDiv.innerHTML = `<strong>Error:</strong> ${error.message}`;
+                });
+        }
+
+        function testGetFaculty() {
+            const courseId = document.getElementById('courseId').value;
+            const url = `/boardreg/api/get-faculty/?course_id=${courseId}`;
+            
+            fetch(url)
+                .then(response => {
+                    if (!response.ok) throw new Error(`HTTP ${response.status}`);
+                    return response.json();
+                })
+                .then(data => {
+                    const resultDiv = document.getElementById('result2');
+                    resultDiv.style.display = 'block';
+                    resultDiv.className = 'result success';
+                    resultDiv.innerHTML = `<strong>Success!</strong><pre>${JSON.stringify(data, null, 2)}</pre>`;
+                })
+                .catch(error => {
+                    const resultDiv = document.getElementById('result2');
+                    resultDiv.style.display = 'block';
+                    resultDiv.className = 'result error';
+                    resultDiv.innerHTML = `<strong>Error:</strong> ${error.message}`;
+                });
+        }
+
+        function testGetStreams() {
+            const courseId = document.getElementById('courseIdStreams').value;
+            const url = `/boardreg/api/get-streams/?course_id=${courseId}`;
+            
+            fetch(url)
+                .then(response => {
+                    if (!response.ok) throw new Error(`HTTP ${response.status}`);
+                    return response.json();
+                })
+                .then(data => {
+                    const resultDiv = document.getElementById('result3');
+                    resultDiv.style.display = 'block';
+                    resultDiv.className = 'result success';
+                    resultDiv.innerHTML = `<strong>Success!</strong><pre>${JSON.stringify(data, null, 2)}</pre>`;
+                })
+                .catch(error => {
+                    const resultDiv = document.getElementById('result3');
+                    resultDiv.style.display = 'block';
+                    resultDiv.className = 'result error';
+                    resultDiv.innerHTML = `<strong>Error:</strong> ${error.message}`;
+                });
+        }
+    </script>
+</body>
+</html>

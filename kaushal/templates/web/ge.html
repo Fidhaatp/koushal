@@ -1,0 +1,312 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Koushal Viks University</title>
+    <meta name="description" content="Koushal Viks University — Quality education for your future.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'web/css/theme.css' %}">
+    <link rel="stylesheet" href="{% static 'web/css/style.css' %}">
+</head>
+<body>
+    <!-- Header -->
+    <header class="site-header">
+        <nav class="navbar navbar-expand-lg">
+            <div class="container">
+                <a class="navbar-brand" href="{% url 'web:index' %}">
+                    <span class="brand-name">Koushal Viks</span>
+                    <span class="brand-tag">University</span>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navMenu">
+                    <ul class="navbar-nav ms-auto align-items-lg-center gap-2 gap-lg-4">
+                        <li class="nav-item"><a class="nav-link" href="#about">Admissions</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#why-us">Programmes</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#history">About Koushal</a></li>
+                        <li class="nav-item d-none d-lg-block"><span class="nav-divider"></span></li>
+                        <li class="nav-item">
+                            <a class="btn btn-primary btn-cta-nav" href="{% url 'boardreg:boardreg' %}">Apply Now</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="hero-bg hero-bg--overlay"></div>
+        <div class="container">
+            <div class="row align-items-end min-vh-100">
+                <div class="col-lg-10 col-xl-8">
+                    <p class="hero-badge">Admissions 2026–27</p>
+                    <h1 class="hero-title hero-title--banner">APPLY FOR KOUSHAL VIKS UNIVERSITY 2026</h1>
+                    <p class="hero-lead hero-lead--banner">Build your future with an institution focused on skills, innovation and real‑world learning.</p>
+                    <div class="hero-actions mt-3">
+                        <a href="{% url 'boardreg:boardreg' %}" class="btn btn-primary btn-lg">
+                            Start your application
+                        </a>
+                        <a href="#why-us" class="btn btn-outline-light btn-lg">
+                            Find your programmes
+                        </a>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="hero-bottom-nav">
+                        <a href="#why-us" class="hero-bottom-link">Find your programmes</a>
+                        <a href="{% url 'boardreg:boardreg' %}" class="hero-bottom-link">Start your application</a>
+                        <a href="#history" class="hero-bottom-link">Know Koushal Viks</a>
+                        <a href="#about" class="hero-bottom-link">Visit & contact</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="section about">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center">
+                    <h2 class="section-title">About the University</h2>
+                    <p class="section-lead">Koushal Viks University is committed to excellence in higher education. We offer a range of programs across faculties—Arts, Science, Commerce, and Engineering—designed to build both knowledge and employability.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Overview (second about – dark block) -->
+    <section id="overview" class="section about-overview">
+        <div class="about-overview-bg"></div>
+        <div class="container position-relative">
+            <div class="row about-overview-content">
+                <div class="col-lg-5 mb-4 mb-lg-0">
+                    <h2 class="about-overview-heading">Overview</h2>
+                    <p class="about-overview-statement">Koushal Viks University offers a vibrant student life, blending academics, culture, and personal growth.</p>
+                </div>
+                <div class="col-lg-6 offset-lg-1">
+                    <h3 class="about-overview-sub">Under Graduate Programmes</h3>
+                    <p class="about-overview-text">Our undergraduate degrees across Arts, Science, Commerce, and Engineering are designed with industry input. You get a strong foundation, hands-on projects, and options for internships so you graduate ready for the workplace.</p>
+                    <h3 class="about-overview-sub mt-4">Post Graduate Programmes</h3>
+                    <p class="about-overview-text">Postgraduate programmes at Koushal Viks combine advanced theory with research and professional practice. We support specialisation and leadership skills to help you excel in your chosen field.</p>
+                </div>
+            </div>
+            <div class="about-overview-graphics">
+                <div class="about-graphic about-graphic--dots"></div>
+                <div class="about-graphic about-graphic--s"></div>
+                <div class="about-graphic about-graphic--circles"></div>
+                <div class="about-graphic about-graphic--flower"></div>
+                <div class="about-graphic about-graphic--clover"></div>
+                <div class="about-graphic about-graphic--merge"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- History / Timeline -->
+    <section id="history" class="section history">
+        <div class="container">
+            <div class="row justify-content-between align-items-end mb-4">
+                <div class="col-lg-7">
+                    <p class="section-eyebrow">Our journey so far</p>
+                    <h2 class="history-title">The flashback to Koushal Viks University's history</h2>
+                </div>
+                <div class="col-lg-4 d-none d-lg-block">
+                    <p class="history-intro">From our foundation in 2004 to AI-led research today, these milestones show how Koushal Viks University has grown with our students and the industry.</p>
+                </div>
+            </div>
+            <div class="history-vertical">
+                <div class="history-item">
+                    <div class="history-node">
+                        <span class="history-node-dot"></span>
+                        <div class="history-node-icon">
+                            <i class="bi bi-flag-fill"></i>
+                        </div>
+                    </div>
+                    <div class="history-content">
+                        <span class="history-year">2004 A.D.</span>
+                        <p class="history-text">Koushal Viks University is founded with the motivation of fostering sharp‑minded individuals and quality education.</p>
+                    </div>
+                </div>
+                <div class="history-item">
+                    <div class="history-node">
+                        <span class="history-node-dot"></span>
+                        <div class="history-node-icon">
+                            <i class="bi bi-mortarboard-fill"></i>
+                        </div>
+                    </div>
+                    <div class="history-content">
+                        <span class="history-year">2010 A.D.</span>
+                        <p class="history-text">We reach the milestone of enrolling 10k students across different streams and programs.</p>
+                    </div>
+                </div>
+                <div class="history-item">
+                    <div class="history-node">
+                        <span class="history-node-dot"></span>
+                        <div class="history-node-icon">
+                            <i class="bi bi-award-fill"></i>
+                        </div>
+                    </div>
+                    <div class="history-content">
+                        <span class="history-year">2015 A.D.</span>
+                        <p class="history-text">The university receives recognitions and awards from national bodies and industry foundations.</p>
+                    </div>
+                </div>
+                <div class="history-item">
+                    <div class="history-node">
+                        <span class="history-node-dot"></span>
+                        <div class="history-node-icon">
+                            <i class="bi bi-shield-lock-fill"></i>
+                        </div>
+                    </div>
+                    <div class="history-content">
+                        <span class="history-year">2018 A.D.</span>
+                        <p class="history-text">Launch of new programs in Networking & Cyber Security and Multimedia to meet industry demand.</p>
+                    </div>
+                </div>
+                <div class="history-item">
+                    <div class="history-node">
+                        <span class="history-node-dot"></span>
+                        <div class="history-node-icon">
+                            <i class="bi bi-graph-up-arrow"></i>
+                        </div>
+                    </div>
+                    <div class="history-content">
+                        <span class="history-year">2020 A.D.</span>
+                        <p class="history-text">We reach 30k+ total enrollments, expanding our academic footprint across the region.</p>
+                    </div>
+                </div>
+                <div class="history-item">
+                    <div class="history-node">
+                        <span class="history-node-dot"></span>
+                        <div class="history-node-icon">
+                            <i class="bi bi-cpu-fill"></i>
+                        </div>
+                    </div>
+                    <div class="history-content">
+                        <span class="history-year">2023 A.D.</span>
+                        <p class="history-text">With advancements in AI, the university establishes a dedicated AI & ML research lab.</p>
+                    </div>
+                </div>
+                <div class="history-item">
+                    <div class="history-node">
+                        <span class="history-node-dot"></span>
+                        <div class="history-node-icon">
+                            <i class="bi bi-emoji-smile-fill"></i>
+                        </div>
+                    </div>
+                    <div class="history-content">
+                        <span class="history-year">2024 A.D.</span>
+                        <p class="history-text">Koushal Viks University proudly celebrates its 20th anniversary with its alumni community.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Research / Project Highlight -->
+    <section id="research" class="section research-highlight">
+        <div class="container">
+            <div class="research-card">
+                <div class="row g-4 align-items-center">
+                    <div class="col-lg-5">
+                        <div class="research-image">
+                            <div class="research-image-overlay"></div>
+                        </div>
+                    </div>
+                    <div class="col-lg-7">
+                        <h2 class="research-title">Effectiveness of community‑led initiatives in tackling plastic and water pollution in regional backwaters.</h2>
+                        <div class="research-tags">
+                            <span class="research-tag research-tag--duration"><i class="bi bi-clock-history me-1"></i>6 Months</span>
+                            <span class="research-tag research-tag--status"><i class="bi bi-check-circle-fill me-1"></i>Completed</span>
+                        </div>
+                        <div class="research-summary">
+                            <h3 class="research-summary-heading">Project Summary:</h3>
+                            <p class="research-summary-text">
+                                This interdisciplinary study at Koushal Viks University examined how awareness drives, local governance and student‑led clean‑up campaigns can reduce plastic waste and invasive weed growth in nearby water bodies. The project analysed data from partner communities, highlighted effective on‑ground practices, and identified areas where policy support is still needed for long‑term impact.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Us -->
+    <section id="why-us" class="section why-us">
+        <div class="container">
+            <h2 class="section-title text-center">Why Choose Us</h2>
+            <div class="row g-4 justify-content-center">
+                <div class="col-md-6 col-lg-4">
+                    <div class="card feature-card">
+                        <div class="card-icon"><i class="bi bi-mortarboard-fill"></i></div>
+                        <h3 class="card-title">Quality Programs</h3>
+                        <p class="card-text">Undergraduate, postgraduate, and diploma courses aligned with industry needs.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card feature-card">
+                        <div class="card-icon"><i class="bi bi-people-fill"></i></div>
+                        <h3 class="card-title">Expert Faculty</h3>
+                        <p class="card-text">Learn from experienced educators dedicated to your growth.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card feature-card">
+                        <div class="card-icon"><i class="bi bi-check-circle-fill"></i></div>
+                        <h3 class="card-title">Simple Registration</h3>
+                        <p class="card-text">Streamlined board registration process so you can focus on learning.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section cta">
+        <div class="container">
+            <div class="cta-box">
+                <h2 class="cta-title">Ready to get started?</h2>
+                <p class="cta-text">Complete your board registration online in a few steps.</p>
+                <a href="{% url 'boardreg:boardreg' %}" class="btn btn-light btn-lg">Board Registration →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="row align-items-center py-4">
+                <div class="col-md-6">
+                    <span class="footer-brand">Koushal Viks University</span>
+                </div>
+                <div class="col-md-6 text-md-end mt-3 mt-md-0">
+                    <a href="{% url 'boardreg:boardreg' %}" class="footer-link">Board Registration</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="mb-0">&copy; {% now "Y" %} Koushal Viks University. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        var header = document.querySelector('.site-header');
+        function updateHeader() {
+          header.classList.toggle('scrolled', window.scrollY > 50);
+        }
+        window.addEventListener('scroll', updateHeader);
+        updateHeader();
+      });
+    </script>
+</body>
+</html>

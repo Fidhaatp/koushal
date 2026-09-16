@@ -14,633 +14,1146 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- favicon -->
     <link rel="apple-touch-icon" href="apple-touch-icon.html">
-    <link rel="shortcut icon" type="image/x-icon" href="{% static 'web/images/fav-orange.png' %}">
+    <link rel="shortcut icon" type="image/x-icon" href="{% static 'web/images/unv/logo.png' %}">
     <!-- Bootstrap v4.4.1 css -->
-    <link rel="stylesheet" type="text/css" href="{% static 'web/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'web/boardregcss/bootstrap.min.css' %}">
     <!-- font-awesome css -->
-    <link rel="stylesheet" type="text/css" href="{% static 'web/css/font-awesome.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'web/boardregcss/font-awesome.min.css' %}">
     <!-- animate css -->
-    <link rel="stylesheet" type="text/css" href="{% static 'web/css/animate.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'web/boardregcss/animate.css' %}">
     <!-- off canvas css -->
-    <link rel="stylesheet" type="text/css" href="{% static 'web/css/off-canvas.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'web/boardregcss/off-canvas.css' %}">
     <!-- linea-font css -->
     <link rel="stylesheet" type="text/css" href="{% static 'web/fonts/linea-fonts.css' %}">
     <!-- flaticon css  -->
     <link rel="stylesheet" type="text/css" href="{% static 'web/fonts/flaticon.css' %}">
     <!-- Main Menu css -->
-    <link rel="stylesheet" href="{% static 'web/css/rsmenu-main.css' %}">
+    <link rel="stylesheet" href="{% static 'web/boardregcss/rsmenu-main.css' %}">
     <!-- spacing css -->
-    <link rel="stylesheet" type="text/css" href="{% static 'web/css/rs-spacing.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'web/boardregcss/rs-spacing.css' %}">
     <!-- style css -->
-    <link rel="stylesheet" type="text/css" href="{% static 'web/css/style.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'web/boardregcss/style.css' %}">
     <!-- This stylesheet dynamically changed from style.less -->
     <!-- responsive css -->
-    <link rel="stylesheet" type="text/css" href="{% static 'web/css/responsive.css' %}">
-    <!--[if lt IE 9]>
-            <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js' %}"></script>
-            <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js' %}"></script>
-        <![endif]-->
+    <link rel="stylesheet" type="text/css" href="{% static 'web/boardregcss/responsive.css' %}">
 </head>
 
 <body class="defult-home">
 
     <!--Preloader area start here-->
-    <div id="loader" class="loader orange-color">
+    <!-- <div id="loader" class="loader">
         <div class="loader-container">
             <div class='loader-icon'>
-                <img src="{% static 'web/images/pre-logo1.png' %}" alt="">
+                <img src="{% static 'web/images/unv/logo.png' %}" alt="">
             </div>
         </div>
-    </div>
+    </div> -->
     <!--Preloader area End here-->
 
-    <!--Full width header Start-->
-   <div class="full-width-header header-style1 home1-modifiy">
-        <!--Header Start-->
-        <header id="rs-header" class="rs-header">
-            <!-- Topbar Area Start -->
-            <div class="topbar-area dark-parimary-bg">
-                <div class="container">
-                    <div class="row y-middle">
-                        <div class="col-md-7">
-                            <ul class="topbar-contact">
-                                <li>
-                                    <i class="flaticon-email"></i>
-                                    <a href="mailto:support@rstheme.com">support@rstheme.com</a>
-                                </li>
-                                <li>
-                                    <i class="flaticon-location"></i>
-                                    374 William S Canning Blvd, MA 2721, USA
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="col-md-5 text-right">
-                            <ul class="topbar-right">
-                                <li class="login-register">
-                                    <i class="fa fa-sign-in"></i>
-                                    <a href="login.html">Login</a>/<a href="register.html">Register</a>
-                                </li>
-                                <li class="btn-part">
-                                    <a class="apply-btn" href="#">Apply Now</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
+    <!-- Simple header for registration page -->
+    <header class="boardreg-header">
+        <div class="container">
+            <div class="boardreg-header-inner">
+                <a href="{% url 'web:index' %}" class="boardreg-logo">
+                    <img src="{% static 'web/images/unv/logo.png' %}" alt="Koushal">
+                </a>
+                <nav class="boardreg-nav">
+                    <a href="{% url 'web:index' %}">Home</a>
+                    <a href="#">About</a>
+                    <a href="#">Course</a>
+                    <a href="#">Contact</a>
+                </nav>
             </div>
-            <!-- Topbar Area End -->
-
-            <!-- Menu Start -->
-            <div class="menu-area menu-sticky">
-                <div class="container">
-                    <div class="row y-middle">
-                        <div class="col-lg-2">
-                            <div class="logo-cat-wrap">
-                                <div class="logo-part">
-                                    <a href="index-2.html">
-                                        <img src="{% static 'web/images/unv/logo.png' %}" alt="">
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-8 text-right">
-                            <div class="rs-menu-area">
-                                <div class="main-menu">
-                                    <div class="mobile-menu">
-                                        <a class="rs-menu-toggle">
-                                            <i class="fa fa-bars"></i>
-                                        </a>
-                                    </div>
-                                    <nav class="rs-menu">
-                                        <ul class="nav-menu">
-                                            <li class="rs-mega-menu mega-rs menu-item-has-children current-menu-item">
-                                                <a href="index-2.html">Home</a>
-                                                <ul class="mega-menu">
-                                                    <li class="mega-menu-container">
-                                                        <div class="mega-menu-innner">
-                                                            <div class="single-megamenu">
-                                                                <ul class="sub-menu">
-                                                                    <li><a href="index-2.html">Main Demo</a> </li>
-                                                                    <li class="active"><a href="index2.html">Online
-                                                                            Course</a> </li>
-                                                                    <li><a href="index3.html">University 01</a> </li>
-                                                                    <li><a href="index4.html">E-Learning</a> </li>
-                                                                    <li><a href="index5.html">Distance Learning</a>
-                                                                    </li>
-                                                                </ul>
-                                                            </div>
-                                                            <div class="single-megamenu">
-                                                                <ul class="sub-menu last-sub-menu">
-                                                                    <li><a href="index6.html">Personal Demo</a> </li>
-                                                                    <li><a href="index7.html">Online Training</a> </li>
-                                                                    <li><a href="index8.html">Online Learning</a> </li>
-                                                                    <li><a href="index9.html">Kitchen Coach</a> </li>
-                                                                    <li><a href="index10.html">University 02</a> </li>
-                                                                </ul>
-                                                            </div>
-                                                            <div class="single-megamenu">
-                                                                <ul class="sub-menu last-sub-menu">
-                                                                    <li><a href="index11.html">Kindergarten 01</a> </li>
-                                                                    <li><a href="index12.html">Freelancing Course</a>
-                                                                    </li>
-                                                                    <li><a href="index13.html">Gym Coach</a> </li>
-                                                                    <li><a href="index14.html">Courses Archive</a> </li>
-                                                                    <li><a href="index15.html">Courses Hub</a> </li>
-                                                                </ul>
-                                                            </div>
-                                                        </div>
-                                                    </li>
-                                                </ul> <!-- //.mega-menu -->
-                                            </li>
-                                            <li class="menu-item-has-children">
-                                                <a href="#">About</a>
-                                                <ul class="sub-menu">
-                                                    <li><a href="about.html">About One</a> </li>
-                                                    <li><a href="about2.html">About Two</a> </li>
-                                                </ul>
-                                            </li>
-
-                                            <li class="menu-item-has-children">
-                                                <a href="#">Courses</a>
-                                                <ul class="sub-menu">
-                                                    <li><a href="course.html">Courses One</a> </li>
-                                                    <li><a href="course2.html">Courses Two</a> </li>
-                                                    <li><a href="course3.html">Courses Three</a> </li>
-                                                    <li><a href="course4.html">Courses Four</a>
-                                                    </li>
-                                                    <li><a href="course5.html">Courses Five</a> </li>
-                                                    <li><a href="course-single.html">Courses Single</a> </li>
-                                                </ul>
-                                            </li>
-
-                                            <li class="menu-item-has-children">
-                                                <a href="#">Pages</a>
-                                                <ul class="sub-menu">
-                                                    <li class="menu-item-has-children right">
-                                                        <a href="#">Team</a>
-                                                        <ul class="sub-menu right">
-                                                            <li><a href="team.html">Team One</a></li>
-                                                            <li><a href="team2.html">Team Two</a></li>
-                                                            <li><a href="team-single.html">Team Single</a></li>
-                                                        </ul>
-                                                    </li>
-                                                    <li class="menu-item-has-children">
-                                                        <a href="#">Event</a>
-                                                        <ul class="sub-menu right">
-                                                            <li><a href="events-style1.html">Event One</a></li>
-                                                            <li><a href="events-style2.html">Event Two</a></li>
-                                                            <li><a href="events-style3.html">Event Three</a></li>
-                                                        </ul>
-                                                    </li>
-                                                    <li class="menu-item-has-children">
-                                                        <a href="#">Gallery</a>
-                                                        <ul class="sub-menu right">
-                                                            <li><a href="gallery-style1.html">Gallery One</a></li>
-                                                            <li><a href="gallery-style2.html">Gallery Two</a></li>
-                                                            <li><a href="gallery-style3.html">Gallery Three</a></li>
-                                                        </ul>
-                                                    </li>
-                                                    <li class="menu-item-has-children">
-                                                        <a href="#">Shop</a>
-                                                        <ul class="sub-menu right">
-                                                            <li><a href="shop.html">Shop</a></li>
-                                                            <li><a href="shop-single.html">Shop Single</a></li>
-                                                            <li><a href="cart.html">Cart</a></li>
-                                                            <li><a href="checkout.html">Checkout</a></li>
-                                                        </ul>
-                                                    </li>
-                                                    <li class="menu-item-has-children">
-                                                        <a href="#">Others</a>
-                                                        <ul class="sub-menu right">
-                                                            <li><a href="faq.html">FAQ</a></li>
-                                                            <li><a href="error.html">404 Page</a></li>
-                                                            <li><a href="login.html">Login</a></li>
-                                                            <li><a href="register.html">Register</a></li>
-                                                        </ul>
-                                                    </li>
-                                                </ul>
-                                            </li>
-
-                                            <li class="menu-item-has-children">
-                                                <a href="#">Blog</a>
-                                                <ul class="sub-menu">
-                                                    <li><a href="blog.html">Blog</a></li>
-                                                    <li class="menu-item-has-children">
-                                                        <a href="#">Blog Sidebar</a>
-                                                        <ul class="sub-menu right">
-                                                            <li><a href="blog-left.html">Blog Left Sidebar</a></li>
-                                                            <li><a href="blog-right.html">Blog Right Sidebar</a></li>
-                                                        </ul>
-                                                    </li>
-                                                    <li class="menu-item-has-children">
-                                                        <a href="#">Single Post</a>
-                                                        <ul class="sub-menu right">
-                                                            <li><a href="blog-post-left.html">Post Left Sidebar</a></li>
-                                                            <li><a href="blog-post-right.html">Post Right Sidebar</a>
-                                                            </li>
-                                                            <li><a href="blog-single.html">Full Width Post</a></li>
-                                                        </ul>
-                                                    </li>
-                                                </ul>
-                                            </li>
-
-                                            <li class="menu-item-has-children">
-                                                <a href="#">Contact</a>
-                                                <ul class="sub-menu">
-                                                    <li><a href="contact.html">Contact One</a> </li>
-                                                    <li><a href="contact2.html">Contact Two</a> </li>
-                                                    <li><a href="contact3.html">Contact Three</a> </li>
-                                                    <li><a href="contact4.html">Contact Four</a> </li>
-                                                </ul>
-                                            </li>
-                                        </ul> <!-- //.nav-menu -->
-                                    </nav>
-                                </div> <!-- //.main-menu -->
-                            </div>
-                        </div>
-                        <div class="col-lg-2 text-right">
-                            <div class="expand-btn-inner">
-                                <ul>
-                                    <li>
-                                        <a class="hidden-xs rs-search" data-target=".search-modal" data-toggle="modal"
-                                            href="#">
-                                            <i class="flaticon-search"></i>
-                                        </a>
-                                    </li>
-                                    <li class="icon-bar cart-inner no-border mini-cart-active">
-                                        <a class="cart-icon">
-                                            <!-- <span class="cart-count">2</span> -->
-                                            <i class="fa fa-shopping-bag"></i>
-                                        </a>
-                                        <div class="woocommerce-mini-cart text-left">
-                                            <div class="cart-bottom-part">
-                                                <ul class="cart-icon-product-list">
-                                                    <li class="display-flex">
-                                                        <div class="icon-cart">
-                                                            <a href="#"><i class="fa fa-times"></i></a>
-                                                        </div>
-                                                        <div class="product-info">
-                                                            <a href="cart.html">Law Book</a><br>
-                                                            <span class="quantity">1 × $30.00</span>
-                                                        </div>
-                                                        <div class="product-image">
-                                                            <a href="cart.html"><img
-                                                                    src="{% static 'web/images/shop/1.jpg' %}"
-                                                                    alt="Product Image"></a>
-                                                        </div>
-                                                    </li>
-                                                    <li class="display-flex">
-                                                        <div class="icon-cart">
-                                                            <a href="#"><i class="fa fa-times"></i></a>
-                                                        </div>
-                                                        <div class="product-info">
-                                                            <a href="cart.html">Spirit Level</a><br>
-                                                            <span class="quantity">1 × $30.00</span>
-                                                        </div>
-                                                        <div class="product-image">
-                                                            <a href="cart.html"><img
-                                                                    src="{% static 'web/images/shop/2.jpg' %}"
-                                                                    alt="Product Image"></a>
-                                                        </div>
-                                                    </li>
-                                                </ul>
-
-                                                <div class="total-price text-center">
-                                                    <span class="subtotal">Subtotal:</span>
-                                                    <span class="current-price">$85.00</span>
-                                                </div>
-
-                                                <div class="cart-btn text-center">
-                                                    <a class="crt-btn btn1" href="cart.html">View Cart</a>
-                                                    <a class="crt-btn btn2" href="checkout.html">Check Out</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </li>
-                                </ul>
-                                <span>
-                                    <a id="nav-expander" class="nav-expander style3">
-                                        <span class="dot1"></span>
-                                        <span class="dot2"></span>
-                                        <span class="dot3"></span>
-                                    </a>
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Menu End -->
-
-            <!-- Canvas Menu start -->
-            <nav class="right_menu_togle hidden-md">
-                <div class="close-btn">
-                    <div id="nav-close">
-                        <div class="line">
-                            <span class="line1"></span><span class="line2"></span>
-                        </div>
-                    </div>
-                </div>
-                <div class="canvas-logo">
-                    <a href="index-2.html"><img src="{% static 'web/images/logo-dark.png' %}" alt="logo"></a>
-                </div>
-                <div class="offcanvas-text">
-                    <p>We denounce with righteous indige nationality and dislike men who are so beguiled and demo by the
-                        charms of pleasure of the moment data com so blinded by desire.</p>
-                </div>
-                <div class="offcanvas-gallery">
-                    <div class="gallery-img">
-                        <a class="image-popup" href="{% static 'web/images/gallery/1.jpg' %}"><img
-                                src="{% static 'web/images/gallery/1.jpg' %}" alt=""></a>
-                    </div>
-                    <div class="gallery-img">
-                        <a class="image-popup" href="{% static 'web/images/gallery/2.jpg' %}"><img
-                                src="{% static 'web/images/gallery/2.jpg' %}" alt=""></a>
-                    </div>
-                    <div class="gallery-img">
-                        <a class="image-popup" href="{% static 'web/images/gallery/3.jpg' %}"><img
-                                src="{% static 'web/images/gallery/3.jpg' %}" alt=""></a>
-                    </div>
-                    <div class="gallery-img">
-                        <a class="image-popup" href="{% static 'web/images/gallery/4.jpg' %}"><img
-                                src="{% static 'web/images/gallery/4.jpg' %}" alt=""></a>
-                    </div>
-                    <div class="gallery-img">
-                        <a class="image-popup" href="{% static 'web/images/gallery/5.jpg' %}"><img
-                                src="{% static 'web/images/gallery/5.jpg' %}" alt=""></a>
-                    </div>
-                    <div class="gallery-img">
-                        <a class="image-popup" href="{% static 'web/images/gallery/6.jpg' %}"><img
-                                src="{% static 'web/images/gallery/6.jpg' %}" alt=""></a>
-                    </div>
-                </div>
-                <div class="map-img">
-                    <img src="{% static 'web/images/map.jpg' %}" alt="">
-                </div>
-                <div class="canvas-contact">
-                    <ul class="social">
-                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                        <li><a href="#"><i class="fa fa-pinterest-p"></i></a></li>
-                        <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                    </ul>
-                </div>
-            </nav>
-            <!-- Canvas Menu end -->
-        </header>
-        <!--Header End-->
-    </div>
-    <!--Full width header End-->
+        </div>
+    </header>
 
     <!-- Main content Start -->
     <div class="main-content">
 
         <!-- Contact Section Start -->
-        <div class="contact-page-section orange-color pt-100 pb-100 md-pt-70 md-pb-70">
-            <div class="container">
-                
+        <div class="contact-page-section orange-color pt-100 pb-100 md-pt-70 md-pb-70 registration-page-bg">
+            <div class="container mt-5">
+                <div class="form-wizard">
+                    <div class="form-wizard-header">
+                        <h1 class="form-wizard-title">University / Board Registration</h1>
+                        <p class="form-wizard-subtitle">Complete the steps below to submit your application. All fields marked with * are required.</p>
+                    </div>
 
-                <div class="row align-items-center contact-bg1">
-                   
-                    <div class="col-lg-12 lg-pl-0">
-                        <div class="rs-quick-contact new-style">
-                            <div class="inner-part mb-35">
-                                <h2 class="title mb-15">Get In Touch</h2>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, eius to mod
-                                    tempor incidi dunt ut dolore.</p>
+                    <!-- Wizard Navigation -->
+                    <div class="wizard-nav">
+                        <div class="step-item">
+                            <span class="step-indicator active" data-step="1">1</span>
+                            <span class="step-label">Personal</span>
+                        </div>
+                        <div class="step-item">
+                            <span class="step-indicator" data-step="2">2</span>
+                            <span class="step-label">Communication</span>
+                        </div>
+                        <div class="step-item">
+                            <span class="step-indicator" data-step="3">3</span>
+                            <span class="step-label">Qualifications</span>
+                        </div>
+                        <div class="step-item">
+                            <span class="step-indicator" data-step="4">4</span>
+                            <span class="step-label">Programme</span>
+                        </div>
+                    </div>
+                    <div class="wizard-progress-bar"><div class="wizard-progress-fill" id="wizardProgressFill"></div></div>
+                    <p class="step-counter" id="stepCounter">Step 1 of 4</p>
+
+                    <form id="registrationForm" method="post" enctype="multipart/form-data" novalidate>
+                        {% csrf_token %}
+
+                        <!-- Step 1: Personal Details -->
+                        <div id="step1" class="step active">
+                            <h3 class="section-title">Personal Details</h3>
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="{{ form.candidate_name.id_for_label }}" class="form-label">
+                                        {{ form.candidate_name.label }} *</label>
+                                    {{ form.candidate_name }}
+                                    {% if form.candidate_name.errors %}{{ form.candidate_name.errors }}{% endif %}
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="{{ form.contact_number.id_for_label }}" class="form-label">
+                                        {{ form.contact_number.label }} *</label>
+                                    {{ form.contact_number }}
+                                    {% if form.contact_number.errors %}{{ form.contact_number.errors }}{% endif %}
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="{{ form.email.id_for_label }}" class="form-label">{{ form.email.label }}
+                                        *</label>
+                                    {{ form.email }}
+                                    {% if form.email.errors %}{{ form.email.errors }}{% endif %}
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="{{ form.date_of_birth.id_for_label }}" class="form-label">
+                                        {{ form.date_of_birth.label }} *</label>
+                                    {{ form.date_of_birth }}
+                                    {% if form.date_of_birth.errors %}{{ form.date_of_birth.errors }}{% endif %}
+                                </div>
+                                
+                                
+                                <div class="col-md-12 mb-3">
+                                    <label for="{{ form.photo.id_for_label }}" class="form-label">{{ form.photo.label }}
+                                        *</label>
+                                    {{ form.photo }}
+                                    {% if form.photo.errors %}{{ form.photo.errors }}{% endif %}
+                                </div>
+
+                                <!-- registration number and internship id -->
+                                <div class="col-md-6 mb-3">
+                                    <label for="{{ form.register_no.id_for_label }}" class="form-label">
+                                        {{ form.register_no.label }} *</label>
+                                    {{ form.register_no }}
+                                    {% if form.register_no.errors %}{{ form.register_no.errors }}{% endif %}
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="{{ form.internship_id.id_for_label }}" class="form-label">
+                                        {{ form.internship_id.label }} *</label>
+                                    {{ form.internship_id }}
+                                    {% if form.internship_id.errors %}{{ form.internship_id.errors }}{% endif %}
+                                </div>
+
+
+
+                                <div class="col-md-6 mb-3">
+                                    <label for="{{ form.gender.id_for_label }}" class="form-label">{{ form.gender.label }} *</label>
+                                    {{ form.gender }}
+                                    {% if form.gender.errors %}{{ form.gender.errors }}{% endif %}
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="{{ form.category.id_for_label }}" class="form-label">
+                                        {{ form.category.label }} *</label>
+                                    {{ form.category }}
+                                    {% if form.category.errors %}{{ form.category.errors }}{% endif %}
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="{{ form.id_proof_type.id_for_label }}" class="form-label">
+                                        {{ form.id_proof_type.label }} *</label>
+                                    {{ form.id_proof_type }}
+                                    {% if form.id_proof_type.errors %}{{ form.id_proof_type.errors }}{% endif %}
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="{{ form.id_proof_no.id_for_label }}" class="form-label">
+                                        {{ form.id_proof_no.label }} *</label>
+                                    {{ form.id_proof_no }}
+                                    {% if form.id_proof_no.errors %}{{ form.id_proof_no.errors }}{% endif %}
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="{{ form.aadhaar_front.id_for_label }}" class="form-label">
+                                        {{ form.aadhaar_front.label }} *</label>
+                                    {{ form.aadhaar_front }}
+                                    {% if form.aadhaar_front.errors %}{{ form.aadhaar_front.errors }}{% endif %}
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="{{ form.aadhaar_back.id_for_label }}" class="form-label">
+                                        {{ form.aadhaar_back.label }} *</label>
+                                    {{ form.aadhaar_back }}
+                                    {% if form.aadhaar_back.errors %}{{ form.aadhaar_back.errors }}{% endif %}
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="{{ form.employed.id_for_label }}" class="form-label">
+                                        {{ form.employed.label }} *</label>
+                                    {{ form.employed }}
+                                    {% if form.employed.errors %}{{ form.employed.errors }}{% endif %}
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="{{ form.hostel_facility.id_for_label }}" class="form-label">
+                                        {{ form.hostel_facility.label }} *</label>
+                                    {{ form.hostel_facility }}
+                                    {% if form.hostel_facility.errors %}{{ form.hostel_facility.errors }}{% endif %}
+                                </div>
                             </div>
-                            <div id="form-messages"></div>
-                            <form id="contact-form" method="post"
-                                action="https://keenitsolutions.com/products/html/educavo/mailer.php">
-                                <div class="row">
-                                    <div class="col-lg-6 mb-30 col-md-6 col-sm-6">
-                                        <input class="from-control" type="text" id="name" name="name" placeholder="Name"
-                                            required="">
-                                    </div>
-                                    <div class="col-lg-6 mb-30 col-md-6 col-sm-6">
-                                        <input class="from-control" type="text" id="email" name="email"
-                                            placeholder="Email" required="">
-                                    </div>
-                                    <div class="col-lg-6 mb-30 col-md-6 col-sm-6">
-                                        <input class="from-control" type="text" id="phone" name="phone"
-                                            placeholder="Phone" required="">
-                                    </div>
-                                    <div class="col-lg-6 mb-30 col-md-6 col-sm-6">
-                                        <input class="from-control" type="text" id="subject" name="subject"
-                                            placeholder="Subject" required="">
-                                    </div>
-
-                                    <div class="col-lg-12 mb-40">
-                                        <textarea class="from-control" id="message" name="message"
-                                            placeholder=" Message" required=""></textarea>
-                                    </div>
-                                </div>
-                                <div class="form-group mb-0">
-                                    <input class="btn-send" type="submit" value="Submit Now">
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Contact Section End -->
-
-        <!-- Newsletter section start -->
-        <div class="rs-newsletter style1 orange-color mb--90 sm-mb-0 sm-pb-70">
-            <div class="container">
-                <div class="newsletter-wrap">
-                    <div class="row y-middle">
-                        <div class="col-lg-6 col-md-12 md-mb-30">
-                            <div class="content-part">
-                                <div class="sec-title">
-                                    <div class="title-icon md-mb-15">
-                                        <img src="{% static 'web/images/newsletter.png' %}" alt="images">
-                                    </div>
-                                    <h2 class="title mb-0 white-color">Subscribe to Newsletter</h2>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-6 col-md-12">
-                            <form class="newsletter-form">
-                                <input type="email" name="email" placeholder="Enter Your Email" required="">
-                                <button type="submit">Submit</button>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Newsletter section end -->
-    </div>
-    <!-- Main content End -->
-
-    <!-- Footer Start -->
-    <footer id="rs-footer" class="rs-footer home9-style main-home">
-        <div class="footer-top">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-3 col-md-12 col-sm-12 footer-widget">
-                        <div class="footer-logo mb-30">
-                            <a href="index-2.html"><img src="{% static 'web/images/lite-logo.png' %}" alt=""></a>
-                        </div>
-                        <div class="textwidget white-color pr-60 md-pr-15">
-                            <p>We denounce with righteous indi gnation and dislike men who are so beguiled and
-                                demoralized by the charms of pleasure of your moment, so blinded by desire those who
-                                fail weakness.</p>
-                        </div>
-                        <ul class="footer_social">
-                            <li>
-                                <a href="#" target="_blank"><span><i class="fa fa-facebook"></i></span></a>
-                            </li>
-                            <li>
-                                <a href="# " target="_blank"><span><i class="fa fa-twitter"></i></span></a>
-                            </li>
-
-                            <li>
-                                <a href="# " target="_blank"><span><i class="fa fa-pinterest-p"></i></span></a>
-                            </li>
-                            <li>
-                                <a href="# " target="_blank"><span><i class="fa fa-google-plus-square"></i></span></a>
-                            </li>
-                            <li>
-                                <a href="# " target="_blank"><span><i class="fa fa-instagram"></i></span></a>
-                            </li>
-
-                        </ul>
-                    </div>
-                    <div class="col-lg-3 col-md-12 col-sm-12 footer-widget md-mb-50">
-                        <h3 class="widget-title">Address</h3>
-                        <ul class="address-widget">
-                            <li>
-                                <i class="flaticon-location"></i>
-                                <div class="desc">374 William S Canning Blvd, River MA 2721, USA</div>
-                            </li>
-                            <li>
-                                <i class="flaticon-call"></i>
-                                <div class="desc">
-                                    <a href="tel:(+880)155-69569">(+880)155-69569</a>
-                                </div>
-                            </li>
-                            <li>
-                                <i class="flaticon-email"></i>
-                                <div class="desc">
-                                    <a href="mailto:support@rstheme.com">support@rstheme.com</a>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="col-lg-3 col-md-12 col-sm-12 pl-50 md-pl-15 footer-widget md-mb-50">
-                        <h3 class="widget-title">Courses</h3>
-                        <ul class="site-map">
-                            <li><a href="#">Courses</a></li>
-                            <li><a href="#">Course Two</a></li>
-                            <li><a href="#">Single Course</a></li>
-                            <li><a href="#">Profile</a></li>
-                            <li><a href="#">Login/Register</a></li>
-                        </ul>
-                    </div>
-                    <div class="col-lg-3 col-md-12 col-sm-12 footer-widget">
-                        <h3 class="widget-title">Recent Posts</h3>
-                        <div class="recent-post mb-20">
-                            <div class="post-img">
-                                <img src="{% static 'web/images/footer/1.jpg' %}" alt="">
-                            </div>
-                            <div class="post-item">
-                                <div class="post-desc">
-                                    <a href="#">University while the lovely valley team work</a>
-                                </div>
-                                <span class="post-date">
-                                    <i class="fa fa-calendar"></i>
-                                    September 20, 2020
-                                </span>
+                            <div class="text-end">
+                                <button type="button" class="btn-next" onclick="nextStep(1)">Next</button>
                             </div>
                         </div>
-                        <div class="recent-post mb-20 md-pb-0">
-                            <div class="post-img">
-                                <img src="{% static 'web/images/footer/2.jpg' %}" alt="">
-                            </div>
-                            <div class="post-item">
-                                <div class="post-desc">
-                                    <a href="#">High school program starting soon 2021</a>
+
+                        <!-- Step 2: Communication Details -->
+                        <div id="step2" class="step">
+                            <h3 class="section-title">Communication Details</h3>
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="{{ form.father_name.id_for_label }}" class="form-label">
+                                        {{ form.father_name.label }} *</label>
+                                    {{ form.father_name }}
+                                    {% if form.father_name.errors %}{{ form.father_name.errors }}{% endif %}
                                 </div>
-                                <span class="post-date">
-                                    <i class="fa fa-calendar-check-o"></i>
-                                    September 14, 2020
-                                </span>
+                                <div class="col-md-6 mb-3">
+                                    <label for="{{ form.father_contact.id_for_label }}" class="form-label">
+                                        {{ form.father_contact.label }}</label>
+                                    {{ form.father_contact }}
+                                    {% if form.father_contact.errors %}{{ form.father_contact.errors }}{% endif %}
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="{{ form.mother_name.id_for_label }}" class="form-label">
+                                        {{ form.mother_name.label }} *</label>
+                                    {{ form.mother_name }}
+                                    {% if form.mother_name.errors %}{{ form.mother_name.errors }}{% endif %}
+                                </div>
+                                
+                                <div class="col-md-6 mb-3">
+                                    <label for="{{ form.mother_contact.id_for_label }}" class="form-label">
+                                        {{ form.mother_contact.label }}</label>
+                                    {{ form.mother_contact }}
+                                    {% if form.mother_contact.errors %}{{ form.mother_contact.errors }}{% endif %}
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="{{ form.country.id_for_label }}" class="form-label">
+                                        {{ form.country.label }} *</label>
+                                    {{ form.country }}
+                                    {% if form.country.errors %}{{ form.country.errors }}{% endif %}
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="{{ form.nationality.id_for_label }}" class="form-label">
+                                        {{ form.nationality.label }} *</label>
+                                    {{ form.nationality }}
+                                    {% if form.nationality.errors %}{{ form.nationality.errors }}{% endif %}
+                                </div>
+                                <div class="col-12 mb-3">
+                                    <label for="{{ form.House_Building_Name_or_Number.id_for_label }}" class="form-label">
+                                        {{ form.House_Building_Name_or_Number.label }} *</label>
+                                    {{ form.House_Building_Name_or_Number }}
+                                    {% if form.House_Building_Name_or_Number.errors %}{{ form.House_Building_Name_or_Number.errors }}{% endif %}
+                                </div>
+                                <div class="col-6 mb-3">
+                                    <label for="{{ form.Street_Name.id_for_label }}" class="form-label">
+                                        {{ form.Street_Name.label }} *</label>
+                                    {{ form.Street_Name }}
+                                    {% if form.Street_Name.errors %}{{ form.Street_Name.errors }}{% endif %}
+                                </div>
+                                
+                                <div class="col-md-6 mb-3">
+                                    <label for="{{ form.village_town_city.id_for_label }}" class="form-label">
+                                        {{ form.village_town_city.label }} *</label>
+                                    {{ form.village_town_city }}
+                                    {% if form.village_town_city.errors %}{{ form.village_town_city.errors }}{% endif %}
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="{{ form.district.id_for_label }}" class="form-label">
+                                        {{ form.district.label }} *</label>
+                                    {{ form.district }}
+                                    {% if form.district.errors %}{{ form.district.errors }}{% endif %}
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="{{ form.State.id_for_label }}" class="form-label">
+                                        {{ form.State.label }} *</label>
+                                    {{ form.State }}
+                                    {% if form.State.errors %}{{ form.State.errors }}{% endif %}
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="{{ form.post_office_name.id_for_label }}" class="form-label">
+                                        {{ form.post_office_name.label }} *</label>
+                                    {{ form.post_office_name }}
+                                    {% if form.post_office_name.errors %}{{ form.post_office_name.errors }}{% endif %}
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="{{ form.pincode.id_for_label }}" class="form-label">
+                                        {{ form.pincode.label }} *</label>
+                                    {{ form.pincode }}
+                                    {% if form.pincode.errors %}{{ form.pincode.errors }}{% endif %}
+                                </div>
+                            </div>
+                            <div class="text-end">
+                                <button type="button" class="btn-prev" onclick="prevStep(2)">Previous</button>
+                                <button type="button" class="btn-next" onclick="nextStep(2)">Next</button>
                             </div>
                         </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <div class="container">
-                <div class="row y-middle">
-                    <div class="col-lg-6 md-mb-20">
-                        <div class="copyright">
-                            <p>&copy; 2020 All Rights Reserved. Developed By <a href="http://rstheme.com/">RSTheme</a>
-                            </p>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 text-right md-text-left">
-                        <ul class="copy-right-menu">
-                            <li><a href="#">Event</a></li>
-                            <li><a href="#">Blog</a></li>
-                            <li><a href="#">Contact</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
-    <!-- Footer End -->
 
-    <!-- start scrollUp  -->
-    <div id="scrollUp" class="orange-color">
-        <i class="fa fa-angle-up"></i>
-    </div>
-    <!-- End scrollUp  -->
-
-    <!-- Search Modal Start -->
-    <div aria-hidden="true" class="modal fade search-modal" role="dialog" tabindex="-1">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span class="flaticon-cross"></span>
-        </button>
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="search-block clearfix">
-                    <form>
-                        <div class="form-group">
-                            <input class="form-control" placeholder="Search Here..." type="text">
+                        <!-- Step 3: Previous Qualification Details -->
+                        <div id="step3" class="step">
+                            <h3 class="section-title">Previous Qualification Details</h3>
+                            <table class="table table-form">
+                                <thead>
+                                    <tr>
+                                        <th>Examination</th>
+                                        <th>Board/University</th>
+                                        <th>Year of Passing</th>
+                                        <th>Percentage/CGPA</th>
+                                        <th>Upload Documents</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Secondary</td>
+                                        <td>{{ form.secondary_board }} {% if form.secondary_board.errors %}
+                                            {{ form.secondary_board.errors }}{% endif %}</td>
+                                        <td>{{ form.secondary_year }} {% if form.secondary_year.errors %}
+                                            {{ form.secondary_year.errors }}{% endif %}</td>
+                                        <td>{{ form.secondary_percentage }} {% if form.secondary_percentage.errors %}
+                                            {{ form.secondary_percentage.errors }}{% endif %}</td>
+                                        <td>{{ form.secondary_doc }} {% if form.secondary_doc.errors %}
+                                            {{ form.secondary_doc.errors }}{% endif %}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Sr. Secondary</td>
+                                        <td>{{ form.srsecondary_board }} {% if form.srsecondary_board.errors %}
+                                            {{ form.srsecondary_board.errors }}{% endif %}</td>
+                                        <td>{{ form.srsecondary_year }} {% if form.srsecondary_year.errors %}
+                                            {{ form.srsecondary_year.errors }}{% endif %}</td>
+                                        <td>{{ form.srsecondary_percentage }} {% if form.srsecondary_percentage.errors%}
+                                            {{ form.srsecondary_percentage.errors }}{% endif %}</td>
+                                        <td>{{ form.srsecondary_doc }} {% if form.srsecondary_doc.errors %}
+                                            {{ form.srsecondary_doc.errors }}{% endif %}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Graduation</td>
+                                        <td>{{ form.graduation_board }} {% if form.graduation_board.errors %}
+                                            {{ form.graduation_board.errors }}{% endif %}</td>
+                                        <td>{{ form.graduation_year }} {% if form.graduation_year.errors %}
+                                            {{ form.graduation_year.errors }}{% endif %}</td>
+                                        <td>{{ form.graduation_percentage }} {% if form.graduation_percentage.errors %}
+                                            {{ form.graduation_percentage.errors }}{% endif %}</td>
+                                        <td>{{ form.graduation_doc }} {% if form.graduation_doc.errors %}
+                                            {{ form.graduation_doc.errors }}{% endif %}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Post Graduation</td>
+                                        <td>{{ form.postgraduation_board }} {% if form.postgraduation_board.errors %}
+                                            {{ form.postgraduation_board.errors }}{% endif %}</td>
+                                        <td>{{ form.postgraduation_year }} {% if form.postgraduation_year.errors %}
+                                            {{ form.postgraduation_year.errors }}{% endif %}</td>
+                                        <td>{{ form.postgraduation_percentage }} {% if form.postgraduation_percentage.errors %}
+                                            {{ form.postgraduation_percentage.errors }}{% endif %}</td>
+                                        <td>{{ form.postgraduation_doc }} {% if form.postgraduation_doc.errors %}
+                                            {{ form.postgraduation_doc.errors }}{% endif %}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Other</td>
+                                        <td>{{ form.other_board }} {% if form.other_board.errors %}
+                                            {{ form.other_board.errors }}{% endif %}</td>
+                                        <td>{{ form.other_year }} {% if form.other_year.errors %}
+                                            {{ form.other_year.errors }}{% endif %}</td>
+                                        <td>{{ form.other_percentage }} {% if form.other_percentage.errors %}
+                                            {{ form.other_percentage.errors }}{% endif %}</td>
+                                        <td>{{ form.other_doc }} {% if form.other_doc.errors %}
+                                            {{ form.other_doc.errors }}{% endif %}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div class="text-end">
+                                <button type="button" class="btn-prev" onclick="prevStep(3)">Previous</button>
+                                <button type="button" class="btn-next" onclick="nextStep(3)">Next</button>
+                            </div>
                         </div>
+
+                        <!-- Step 4: Programme Details -->
+                        <div id="step4" class="step">
+                            <h3 class="section-title">Programme Details</h3>
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="{{ form.date_of_join.id_for_label }}" class="form-label">
+                                        {{ form.date_of_join.label }} *</label>
+                                    {{ form.date_of_join }}
+                                    {% if form.date_of_join.errors %}{{ form.date_of_join.errors }}{% endif %}
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label class="form-label">{{ form.course_type.label }} *</label>
+                                    {{ form.course_type }}
+                                    {{ form.course_type.errors }}
+                                </div>
+
+                                <div class="col-md-6 mb-3">
+                                    <label class="form-label">{{ form.course.label }} *</label>
+                                    {{ form.course }}
+                                    {{ form.course.errors }}
+                                </div>
+
+                                <div class="col-md-6 mb-3">
+                                    <label class="form-label">Faculty (auto-filled)</label>
+                                    <input type="text" class="form-control" id="faculty_display" readonly 
+                                           value="{% if form.instance.course and form.instance.course.faculty %}{{ form.instance.course.faculty.name }}{% endif %}"
+                                           placeholder="Select course to see faculty">
+                                </div>
+
+                                <div class="col-md-6 mb-3">
+                                    <label class="form-label">{{ form.stream.label }}</label>
+                                    {{ form.stream }}
+                                    {{ form.stream.errors }}
+                                </div>
+                               
+                                <div class="col-md-6 mb-3">
+                                    <label for="{{ form.month_session.id_for_label }}" class="form-label">
+                                        {{ form.month_session.label }} *</label>
+                                    {{ form.month_session }}
+                                    {% if form.month_session.errors %}{{ form.month_session.errors }}{% endif %}
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="{{ form.session.id_for_label }}" class="form-label">
+                                        {{ form.session.label }} *</label>
+                                    {{ form.session }}
+                                    {% if form.session.errors %}{{ form.session.errors }}{% endif %}
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="{{ form.mode_of_study.id_for_label }}" class="form-label">
+                                        {{ form.mode_of_study.label }} *</label>
+                                    {{ form.mode_of_study }}
+                                    {% if form.mode_of_study.errors %}{{ form.mode_of_study.errors }}{% endif %}
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="{{ form.duration.id_for_label }}" class="form-label">
+                                        {{ form.duration.label }}</label>
+                                    {{ form.duration }} 
+                                    {% if form.duration.errors %}{{ form.duration.errors }}{% endif %}
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="{{ form.branch.id_for_label }}" class="form-label">
+                                        {{ form.branch.label }}</label>
+                                    {{ form.branch }}
+                                    {% if form.branch.errors %}{{ form.branch.errors }}{% endif %}
+                                </div>
+                                
+                                <div class="col-md-6 mb-3">
+                                    <label for="{{ form.academic_delivery_end.id_for_label }}" class="form-label">
+                                        {{ form.academic_delivery_end.label }} *</label>
+                                    {{ form.academic_delivery_end }}
+                                    {% if form.academic_delivery_end.errors %}{{ form.academic_delivery_end.errors }}{% endif %}
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="{{ form.application_fee.id_for_label }}" class="form-label">
+                                        Course / Application Fee (₹) *</label>
+                                    <div class="input-group">
+                                        <span class="input-group-text">₹</span>
+                                        {{ form.application_fee }}
+                                    </div>
+                                    <small class="text-muted">Auto-filled from selected course.</small>
+                                    {% if form.application_fee.errors %}{{ form.application_fee.errors }}{% endif %}
+                                </div>
+                            </div>
+                            <div class="text-end">
+                                <button type="button" class="btn-prev" onclick="prevStep(4)">Previous</button>
+                                <button type="button" class="btn-submit" onclick="submitForm()">Submit Application</button>
+                            </div>
+                        </div>
+
                     </form>
                 </div>
             </div>
-        </div>
-    </div>
-    <!-- Search Modal End -->
 
-    <!-- modernizr js -->
-    <script src="{% static 'web/js/modernizr-2.8.3.min.js' %}"></script>
-    <!-- jquery latest version -->
-    <script src="{% static 'web/js/jquery.min.js' %}"></script>
-    <!-- Bootstrap v4.4.1 js -->
-    <script src="{% static 'web/js/bootstrap.min.js' %}"></script>
-    <!-- Menu js -->
-    <script src="{% static 'web/js/rsmenu-main.js' %}"></script>
-    <!-- op nav js -->
-    <script src="{% static 'web/js/jquery.nav.js' %}"></script>
-    <!-- wow js -->
-    <script src="{% static 'web/js/wow.min.js' %}"></script>
-    <!-- plugins js -->
-    <script src="{% static 'web/js/plugins.js' %}"></script>
-    <!-- magnific popup js -->
-    <script src="{% static 'web/js/jquery.magnific-popup.min.js' %}"></script>
-    <!-- contact form js -->
-    <script src="{% static 'web/js/contact.form.js' %}"></script>
-    <!-- main js -->
-    <script src="{% static 'web/js/main.js' %}"></script>
+            <!-- Keep this line (Bootstrap 5 JS) -->
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+            <!-- SweetAlert2 -->
+            <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+            <script>
+            // ───────────────────────────────────────────────
+            //   Multi-step form navigation
+            // ───────────────────────────────────────────────
+            
+            function nextStep(current) {
+                if (validateStep(current)) {
+                    document.getElementById(`step${current}`).classList.remove('active');
+                    document.getElementById(`step${current + 1}`).classList.add('active');
+                    updateNav(current + 1);
+                }
+            }
+
+            function prevStep(current) {
+                document.getElementById(`step${current}`).classList.remove('active');
+                document.getElementById(`step${current - 1}`).classList.add('active');
+                updateNav(current - 1);
+            }
+
+            function updateNav(activeStep) {
+                document.querySelectorAll('.step-indicator').forEach((el, idx) => {
+                    el.classList.toggle('active', idx + 1 === activeStep);
+                });
+                document.querySelectorAll('.step-item').forEach((el, idx) => {
+                    el.classList.toggle('active', idx + 1 === activeStep);
+                });
+                const counter = document.getElementById('stepCounter');
+                if (counter) counter.textContent = 'Step ' + activeStep + ' of 4';
+                const fill = document.getElementById('wizardProgressFill');
+                if (fill) fill.style.width = (activeStep / 4 * 100) + '%';
+            }
+
+            function validateStep(stepNumber) {
+                const step = document.getElementById(`step${stepNumber}`);
+                const requiredFields = step.querySelectorAll('[required]');
+                let isValid = true;
+            
+                requiredFields.forEach(field => {
+                    if (!field.value.trim()) {
+                        field.classList.add('is-invalid');
+                        isValid = false;
+                    } else {
+                        field.classList.remove('is-invalid');
+                    }
+                });
+            
+                return isValid;
+            }
+
+            async function submitForm() {
+                // Validate all steps
+                let hasError = false;
+                for (let i = 1; i <= 4; i++) {
+                    const step = document.getElementById(`step${i}`);
+                    const requiredFields = step.querySelectorAll('[required]');
+                    
+                    requiredFields.forEach(field => {
+                        if (!field.value.trim()) {
+                            field.classList.add('is-invalid');
+                            console.error(`❌ Required field missing: ${field.name}`);
+                            hasError = true;
+                        } else {
+                            field.classList.remove('is-invalid');
+                        }
+                    });
+                }
+
+                if (hasError) {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Required fields missing',
+                        text: 'Please fill all required fields before submitting the form.',
+                    });
+                    return;
+                }
+
+                const form = document.getElementById('registrationForm');
+                const formData = new FormData(form);
+
+                try {
+                    const csrfToken = form.querySelector('[name=csrfmiddlewaretoken]').value;
+                    const response = await fetch(form.getAttribute('action') || window.location.pathname, {
+                        method: 'POST',
+                        headers: {
+                            'X-Requested-With': 'XMLHttpRequest',
+                            'X-CSRFToken': csrfToken,
+                        },
+                        body: formData,
+                    });
+
+                    let data = null;
+                    const responseText = await response.text();
+                    try {
+                        data = responseText ? JSON.parse(responseText) : {};
+                    } catch (e) {
+                        console.error('Response was not JSON:', responseText.substring(0, 200));
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Server error',
+                            text: 'Server returned an error (status ' + response.status + '). Check server logs or try again later.',
+                        });
+                        return;
+                    }
+
+                    if (response.ok && data.success) {
+                        const hasAppraisal = !!(data.is_data_science && data.appraisal_url);
+                        let htmlMsg = 'Your application has been <strong>saved</strong> and is available in the admin.<br><br>';
+                        htmlMsg += 'You can download the registration PDF';
+                        if (hasAppraisal) {
+                            htmlMsg += ' and the <strong>Appraisal Form</strong> (Data Science)';
+                        }
+                        htmlMsg += ', or click OK to continue.';
+
+                        const swalOpts = {
+                            icon: 'success',
+                            title: 'Registration Successful!',
+                            html: htmlMsg,
+                            showCancelButton: true,
+                            confirmButtonText: 'Download PDF',
+                            cancelButtonText: 'OK',
+                        };
+                        if (hasAppraisal) {
+                            swalOpts.showDenyButton = true;
+                            swalOpts.denyButtonText = 'Download Appraisal';
+                        }
+
+                        Swal.fire(swalOpts).then((result) => {
+                            if (result.isConfirmed && data.download_url) {
+                                window.open(data.download_url, '_blank');
+                            } else if (result.isDenied && data.appraisal_url) {
+                                window.open(data.appraisal_url, '_blank');
+                            }
+                            form.reset();
+                            window.location.reload();
+                        });
+                    } else {
+                        let errorMessage = 'Please check the form and try again.';
+                        if (data && data.errors) {
+                            const parts = [];
+                            for (const [field, messages] of Object.entries(data.errors)) {
+                                if (messages && messages.length) {
+                                    const msg = Array.isArray(messages) ? messages.join(', ') : String(messages);
+                                    parts.push(field + ': ' + msg);
+                                }
+                            }
+                            if (parts.length) {
+                                errorMessage = parts.join('\n');
+                            }
+                        }
+
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Submission failed',
+                            text: errorMessage,
+                        });
+                    }
+                } catch (err) {
+                    console.error('Submission error:', err);
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Something went wrong',
+                        text: 'Unable to submit the form right now. Please try again later.',
+                    });
+                }
+            }
+
+            // ───────────────────────────────────────────────
+            //   Cascading dropdowns: Course Type → Course → Faculty + Stream
+            // ───────────────────────────────────────────────
+            // Use Django URL so API works locally and on server (any subpath)
+            const API_BASE = "{% url 'boardreg:api_get_courses' %}".replace(/get-courses\/?$/, '');
+
+            function clearSelect(selectElement, placeholder = 'Select...') {
+                selectElement.innerHTML = `<option value="">${placeholder}</option>`;
+            }
+
+            function populateSelect(selectElement, items, valueKey = 'id', labelKey = 'name') {
+                items.forEach(item => {
+                    const option = document.createElement('option');
+                    option.value = item[valueKey];
+                    option.textContent = item[labelKey];
+                    selectElement.appendChild(option);
+                });
+            }
+
+            function fetchJson(url) {
+                return fetch(url)
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error(`HTTP ${response.status} – ${response.statusText}`);
+                        }
+                        return response.json();
+                    })
+                    .catch(err => {
+                        console.error(`Fetch error: ${url}`, err);
+                        return []; // or throw if you want to handle differently
+                    });
+            }
+
+            // ─── When Course Type changes ──────────────────────────────────────────────
+            document.getElementById('id_course_type')?.addEventListener('change', async function() {
+                const ctId = this.value.trim();
+                console.log('🔄 Course Type Changed:', ctId);
+            
+                const courseSelect   = document.getElementById('id_course');
+                const streamSelect   = document.getElementById('id_stream');
+                const facultySelect  = document.getElementById('faculty_display');
+                const sessionSelect  = document.getElementById('id_session');
+                const modeSelect     = document.getElementById('id_mode_of_study');
+                const durationSelect = document.getElementById('id_duration');
+            
+                // Reset everything below
+                clearSelect(courseSelect);
+                clearSelect(streamSelect);
+                if (facultySelect) facultySelect.value = '';
+                if (sessionSelect) clearSelect(sessionSelect);
+                if (modeSelect) clearSelect(modeSelect);
+                if (durationSelect) clearSelect(durationSelect);
+            
+                if (!ctId) {
+                    console.log('⚠️ Course Type ID is empty');
+                    return;
+                }
+            
+                const url = `${API_BASE}get-courses/?course_type_id=${ctId}`;
+                console.log('📡 Fetching from:', url);
+                
+                const data = await fetchJson(url);
+                console.log('✅ Received courses:', data);
+            
+                if (data && Array.isArray(data) && data.length > 0) {
+                    console.log(`📝 Adding ${data.length} courses to dropdown`);
+                    populateSelect(courseSelect, data);
+                } else {
+                    console.warn('❌ No courses found for course type', ctId);
+                }
+            });
+
+            // ─── When Course changes ───────────────────────────────────────────────────
+            document.getElementById('id_course')?.addEventListener('change', async function() {
+                const courseId = this.value.trim();
+                console.log('🔄 Course Changed:', courseId);
+            
+                const streamSelect   = document.getElementById('id_stream');
+                const facultySelect  = document.getElementById('faculty_display');
+                const sessionSelect  = document.getElementById('id_session');
+                const modeSelect     = document.getElementById('id_mode_of_study');
+                const durationSelect = document.getElementById('id_duration');
+            
+                // Reset dependents
+                clearSelect(streamSelect);
+                clearSelect(facultySelect);
+                if (sessionSelect) clearSelect(sessionSelect);
+                if (modeSelect) clearSelect(modeSelect);
+                if (durationSelect) clearSelect(durationSelect);
+            
+                if (!courseId) {
+                    console.log('⚠️ Course ID is empty');
+                    return;
+                }
+            
+                // 1. Load faculty (single object expected)
+                const facultyUrl = `${API_BASE}get-faculty/?course_id=${courseId}`;
+                console.log('📡 Fetching faculty from:', facultyUrl);
+                const facultyData = await fetchJson(facultyUrl);
+                console.log('✅ Faculty data received:', facultyData);
+            
+                if (facultyData?.name) {
+                    facultySelect.value = facultyData.name;
+                    console.log('✅ Faculty set to:', facultyData.name);
+                } else {
+                    console.warn('❌ No faculty found for course', courseId);
+                }
+            
+                // 2. Load streams
+                const streamUrl = `${API_BASE}get-streams/?course_id=${courseId}`;
+                const streamData = await fetchJson(streamUrl);
+                if (streamData && Array.isArray(streamData) && streamData.length > 0) {
+                    populateSelect(streamSelect, streamData);
+                }
+            
+                // 3. Load sessions, modes, durations for Programme Details
+                const [sessionData, modeData, durationData] = await Promise.all([
+                    fetchJson(`${API_BASE}get-sessions/?course_id=${courseId}`),
+                    fetchJson(`${API_BASE}get-modes/?course_id=${courseId}`),
+                    fetchJson(`${API_BASE}get-durations/?course_id=${courseId}`)
+                ]);
+                if (sessionSelect && sessionData && Array.isArray(sessionData) && sessionData.length > 0) {
+                    populateSelect(sessionSelect, sessionData);
+                }
+                if (modeSelect && modeData && Array.isArray(modeData) && modeData.length > 0) {
+                    populateSelect(modeSelect, modeData);
+                }
+                if (durationSelect && durationData && Array.isArray(durationData) && durationData.length > 0) {
+                    populateSelect(durationSelect, durationData);
+                }
+            });
+
+            // Initialize progress and step counter; trigger dropdowns if editing
+            window.addEventListener('load', () => {
+                updateNav(1);
+                const ctSelect = document.getElementById('id_course_type');
+                if (ctSelect?.value) {
+                    ctSelect.dispatchEvent(new Event('change'));
+                }
+                const courseSelect = document.getElementById('id_course');
+                if (courseSelect?.value) {
+                    courseSelect.dispatchEvent(new Event('change'));
+                }
+            });
+            </script>
+            <style>
+                /* Simple header */
+                .boardreg-header {
+                    background: #fff;
+                    box-shadow: 0 1px 12px rgba(0,0,0,0.06);
+                    padding: 14px 0;
+                }
+                .boardreg-header-inner {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    flex-wrap: wrap;
+                    gap: 12px;
+                }
+                .boardreg-logo { display: inline-block; }
+                .boardreg-logo img { height: 42px; width: auto; display: block; }
+                .boardreg-nav {
+                    display: flex;
+                    gap: 20px;
+                    align-items: center;
+                }
+                .boardreg-nav a {
+                    color: #273c66;
+                    text-decoration: none;
+                    font-weight: 600;
+                    font-size: 0.95rem;
+                }
+                .boardreg-nav a:hover { color: #3b5998; }
+
+                /* Minimal footer */
+                .boardreg-footer {
+                    background: #1a202c;
+                    color: #94a3b8;
+                    padding: 20px 0;
+                    margin-top: 40px;
+                }
+                .boardreg-footer-inner {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    flex-wrap: wrap;
+                    gap: 12px;
+                }
+                .boardreg-copyright { margin: 0; font-size: 0.9rem; }
+                .boardreg-footer-links { display: flex; gap: 16px; }
+                .boardreg-footer-links a {
+                    color: #cbd5e1;
+                    text-decoration: none;
+                    font-size: 0.9rem;
+                }
+                .boardreg-footer-links a:hover { color: #fff; }
+
+                .registration-page-bg {
+                    background: linear-gradient(135deg, #f5f7fa 0%, #e4e8ec 100%);
+                    min-height: 100vh;
+                }
+
+                .form-wizard {
+                    max-width: 920px;
+                    margin: 0 auto;
+                    background: #fff;
+                    border-radius: 20px;
+                    padding: 40px 45px 45px;
+                    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08), 0 0 1px rgba(0, 0, 0, 0.05);
+                    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+                    border: 1px solid rgba(39, 60, 102, 0.06);
+                }
+
+                .form-wizard-header {
+                    text-align: center;
+                    margin-bottom: 36px;
+                    padding-bottom: 24px;
+                    border-bottom: 1px solid #eee;
+                }
+
+                .form-wizard-title {
+                    font-size: 1.75rem;
+                    font-weight: 700;
+                    color: #1a202c;
+                    margin: 0 0 10px;
+                    letter-spacing: -0.02em;
+                }
+
+                .form-wizard-subtitle {
+                    font-size: 0.95rem;
+                    color: #64748b;
+                    margin: 0;
+                    max-width: 520px;
+                    margin-left: auto;
+                    margin-right: auto;
+                    line-height: 1.5;
+                }
+
+                .wizard-nav {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: flex-start;
+                    margin-bottom: 12px;
+                    position: relative;
+                }
+
+                .wizard-nav .step-item {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    flex: 1;
+                    position: relative;
+                    z-index: 1;
+                }
+
+                .wizard-nav .step-indicator {
+                    width: 44px;
+                    height: 44px;
+                    border-radius: 50%;
+                    background: #e2e8f0;
+                    color: #64748b;
+                    font-weight: 700;
+                    font-size: 1rem;
+                    display: inline-flex;
+                    align-items: center;
+                    justify-content: center;
+                    transition: all 0.3s ease;
+                    border: 3px solid #fff;
+                    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+                }
+
+                .wizard-nav .step-item.active .step-indicator {
+                    background: #273c66;
+                    color: #fff;
+                    box-shadow: 0 4px 14px rgba(39, 60, 102, 0.35);
+                }
+
+                .wizard-nav .step-label {
+                    font-size: 0.75rem;
+                    font-weight: 600;
+                    color: #94a3b8;
+                    margin-top: 8px;
+                    text-transform: uppercase;
+                    letter-spacing: 0.04em;
+                }
+
+                .wizard-nav .step-item.active .step-label {
+                    color: #273c66;
+                }
+
+                .wizard-progress-bar {
+                    height: 6px;
+                    background: #e2e8f0;
+                    border-radius: 3px;
+                    overflow: hidden;
+                    margin-bottom: 8px;
+                }
+
+                .wizard-progress-fill {
+                    height: 100%;
+                    background: linear-gradient(90deg, #273c66, #3b5998);
+                    border-radius: 3px;
+                    width: 25%;
+                    transition: width 0.4s ease;
+                }
+
+                .step-counter {
+                    font-size: 0.85rem;
+                    color: #64748b;
+                    margin: 0 0 28px;
+                    font-weight: 500;
+                }
+
+                .step {
+                    display: none;
+                    animation: fadeIn 0.4s ease-out;
+                }
+
+                .step.active {
+                    display: block;
+                }
+
+                @keyframes fadeIn {
+                    from { opacity: 0; transform: translateY(12px); }
+                    to { opacity: 1; transform: translateY(0); }
+                }
+
+                .section-title {
+                    color: #1a202c;
+                    border-bottom: 2px solid #273c66;
+                    padding-bottom: 12px;
+                    margin-bottom: 24px;
+                    font-size: 1.25rem;
+                    font-weight: 700;
+                    text-align: left;
+                }
+
+                .table-form th,
+                .table-form td {
+                    padding: 14px 16px;
+                    vertical-align: middle;
+                    border: none;
+                }
+
+                .table-form {
+                    border-radius: 12px;
+                    overflow: hidden;
+                    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+                    margin-bottom: 24px;
+                    border: 1px solid #eee;
+                }
+
+                .table-form thead th {
+                    background: #273c66;
+                    color: #fff;
+                    font-weight: 600;
+                    font-size: 0.85rem;
+                    text-align: center;
+                }
+
+                .table-form tbody tr:nth-child(even) {
+                    background: #f8fafc;
+                }
+
+                .table-form tbody tr:hover {
+                    background: #f1f5f9;
+                }
+
+                .btn-next,
+                .btn-prev,
+                .btn-submit {
+                    padding: 14px 28px;
+                    border-radius: 12px;
+                    font-weight: 600;
+                    font-size: 0.95rem;
+                    cursor: pointer;
+                    transition: all 0.25s ease;
+                    margin-left: 10px;
+                    border: none;
+                }
+
+                .btn-next,
+                .btn-submit {
+                    background: #273c66;
+                    color: #fff;
+                    box-shadow: 0 4px 14px rgba(39, 60, 102, 0.25);
+                }
+
+                .btn-next:hover,
+                .btn-submit:hover {
+                    background: #1e2d4a;
+                    transform: translateY(-1px);
+                    box-shadow: 0 6px 20px rgba(39, 60, 102, 0.3);
+                }
+
+                .btn-prev {
+                    background: #f1f5f9;
+                    color: #475569;
+                }
+
+                .btn-prev:hover {
+                    background: #e2e8f0;
+                    color: #1e293b;
+                    transform: translateY(-1px);
+                }
+
+                .form-control {
+                    border: 1px solid #e2e8f0;
+                    border-radius: 10px;
+                    padding: 12px 14px;
+                    font-size: 0.95rem;
+                    height: 48px;
+                    transition: border-color 0.2s, box-shadow 0.2s;
+                    background: #fff;
+                }
+
+                .form-control:focus {
+                    border-color: #273c66;
+                    box-shadow: 0 0 0 3px rgba(39, 60, 102, 0.15);
+                    outline: none;
+                }
+
+                .form-control::placeholder {
+                    color: #94a3b8;
+                }
+
+                .form-label {
+                    font-weight: 600;
+                    color: #334155;
+                    margin-bottom: 6px;
+                    display: block;
+                    font-size: 0.9rem;
+                }
+
+                /* Error styling */
+                .is-invalid {
+                    border-color: #dc2626 !important;
+                    background-color: #fef2f2;
+                }
+
+                .errorlist {
+                    list-style: none;
+                    padding: 0;
+                    margin: 4px 0 0;
+                    font-size: 0.85rem;
+                    color: #dc2626;
+                }
+
+                /* Responsive */
+                @media (max-width: 768px) {
+                    .form-wizard {
+                        padding: 24px 20px;
+                        border-radius: 16px;
+                    }
+
+                    .form-wizard-title { font-size: 1.35rem; }
+                    .form-wizard-subtitle { font-size: 0.9rem; }
+
+                    .wizard-nav .step-indicator {
+                        width: 36px;
+                        height: 36px;
+                        font-size: 0.9rem;
+                    }
+
+                    .wizard-nav .step-label {
+                        font-size: 0.65rem;
+                    }
+
+                    .btn-next, .btn-prev, .btn-submit {
+                        padding: 12px 20px;
+                        width: 100%;
+                        margin: 4px 0;
+                    }
+                }
+            </style>
+            <!-- Contact Section End -->
+        </div>
+        <!-- Main content End -->
+
+        <!-- Minimal footer -->
+        <footer class="boardreg-footer">
+            <div class="container">
+                <div class="boardreg-footer-inner">
+                    <p class="boardreg-copyright">&copy; {% now "Y" %} Koushal. All rights reserved.</p>
+                    <div class="boardreg-footer-links">
+                        <a href="{% url 'web:index' %}">Home</a>
+                        <a href="#">Contact</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <!-- modernizr js -->
+        <script src="{% static 'web/js/modernizr-2.8.3.min.js' %}"></script>
+        <!-- jquery latest version -->
+        <script src="{% static 'web/js/jquery.min.js' %}"></script>
+        <!-- Bootstrap v4.4.1 js -->
+        <script src="{% static 'web/js/bootstrap.min.js' %}"></script>
+        <!-- Menu js -->
+        <script src="{% static 'web/js/rsmenu-main.js' %}"></script>
+        <!-- op nav js -->
+        <script src="{% static 'web/js/jquery.nav.js' %}"></script>
+        <!-- wow js -->
+        <script src="{% static 'web/js/wow.min.js' %}"></script>
+        <!-- plugins js -->
+        <script src="{% static 'web/js/plugins.js' %}"></script>
+        <!-- magnific popup js -->
+        <script src="{% static 'web/js/jquery.magnific-popup.min.js' %}"></script>
+        <!-- contact form js -->
+        <script src="{% static 'web/js/contact.form.js' %}"></script>
+        <!-- main js -->
+        <script src="{% static 'web/js/main.js' %}"></script>
 </body>
 
 <!-- Mirrored from keenitsolutions.com/products/html/educavo/contact3.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 16 Oct 2025 04:57:26 GMT -->

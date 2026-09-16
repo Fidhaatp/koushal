@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+
+<head>
+    <!-- meta tag -->
+    <meta charset="utf-8">
+    <title>Registration Successful - Koushal</title>
+    <meta name="description" content="">
+    <!-- responsive tag -->
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- favicon -->
+    <link rel="apple-touch-icon" href="apple-touch-icon.html">
+    <link rel="shortcut icon" type="image/x-icon" href="{% static 'web/images/unv/logo.png' %}">
+    <!-- Bootstrap v4.4.1 css -->
+    <link rel="stylesheet" type="text/css" href="{% static 'web/boardregcss/bootstrap.min.css' %}">
+    <!-- font-awesome css -->
+    <link rel="stylesheet" type="text/css" href="{% static 'web/boardregcss/font-awesome.min.css' %}">
+    <!-- animate css -->
+    <link rel="stylesheet" type="text/css" href="{% static 'web/boardregcss/animate.css' %}">
+    <!-- off canvas css -->
+    <link rel="stylesheet" type="text/css" href="{% static 'web/boardregcss/off-canvas.css' %}">
+    <!-- linea-font css -->
+    <link rel="stylesheet" type="text/css" href="{% static 'web/fonts/linea-fonts.css' %}">
+    <!-- flaticon css  -->
+    <link rel="stylesheet" type="text/css" href="{% static 'web/fonts/flaticon.css' %}">
+    <!-- Main Menu css -->
+    <link rel="stylesheet" href="{% static 'web/boardregcss/rsmenu-main.css' %}">
+    <!-- spacing css -->
+    <link rel="stylesheet" type="text/css" href="{% static 'web/boardregcss/rs-spacing.css' %}">
+    <!-- style css -->
+    <link rel="stylesheet" type="text/css" href="{% static 'web/boardregcss/style.css' %}">
+    <!-- responsive css -->
+    <link rel="stylesheet" type="text/css" href="{% static 'web/boardregcss/responsive.css' %}">
+
+    <style>
+        .success-container {
+            padding: 80px 0;
+            min-height: 70vh;
+        }
+
+        .success-card {
+            background: white;
+            padding: 50px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .success-icon {
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 30px;
+            animation: scaleIn 0.5s ease-out;
+        }
+
+        .success-icon i {
+            font-size: 50px;
+            color: white;
+        }
+
+        @keyframes scaleIn {
+            0% {
+                transform: scale(0);
+            }
+
+            50% {
+                transform: scale(1.1);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        .success-title {
+            font-size: 32px;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 15px;
+        }
+
+        .success-message {
+            font-size: 16px;
+            color: #6c757d;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+
+        .registration-info {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 10px;
+            margin: 30px 0;
+            text-align: left;
+        }
+
+        .info-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px solid #dee2e6;
+        }
+
+        .info-row:last-child {
+            border-bottom: none;
+        }
+
+        .info-label {
+            font-weight: 600;
+            color: #495057;
+        }
+
+        .info-value {
+            color: #212529;
+        }
+
+        .btn-download-primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            margin: 10px;
+        }
+
+        .btn-download-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
+            color: white;
+            text-decoration: none;
+        }
+
+        .btn-secondary {
+            background: white;
+            color: #667eea;
+            border: 2px solid #667eea;
+            padding: 15px 40px;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            margin: 10px;
+        }
+
+        .btn-secondary:hover {
+            background: #667eea;
+            color: white;
+            text-decoration: none;
+        }
+
+        .action-buttons {
+            margin-top: 30px;
+        }
+    </style>
+</head>
+
+<body class="defult-home">
+
+    <!--Full width header Start-->
+    <div class="full-width-header header-style1 home1-modifiy">
+        <!--Header Start-->
+        <header id="rs-header" class="rs-header">
+            <!-- Menu Start -->
+            <div class="menu-area menu-sticky">
+                <div class="container">
+                    <div class="row y-middle">
+                        <div class="col-lg-3">
+                            <div class="logo-cat-wrap">
+                                <div class="logo-part">
+                                    <a href="{% url 'web:index' %}">
+                                        <img src="{% static 'web/images/unv/logo.png' %}" alt="">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-9 text-right">
+                            <div class="rs-menu-area">
+                                <div class="main-menu">
+                                    <nav class="rs-menu">
+                                        <ul class="nav-menu">
+                                            <li>
+                                                <a href="{% url 'web:index' %}">Home</a>
+                                            </li>
+                                            <li>
+                                                <a href="{% url 'web:about' %}">About</a>
+                                            </li>
+                                            <li>
+                                                <a href="{% url 'web:course' %}">Course</a>
+                                            </li>
+                                            <li>
+                                                <a href="{% url 'web:contact' %}">Contact</a>
+                                            </li>
+                                        </ul>
+                                    </nav>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Menu End -->
+        </header>
+        <!--Header End-->
+    </div>
+    <!--Full width header End-->
+
+    <!-- Main content Start -->
+    <div class="main-content">
+        <div class="success-container">
+            <div class="container">
+                <div class="success-card">
+                    <div class="success-icon">
+                        <i class="fa fa-check"></i>
+                    </div>
+
+                    <h1 class="success-title">Registration Successful!</h1>
+                    <p class="success-message">
+                        Thank you for registering! Your application has been submitted successfully.
+                        You can download your registration PDF{% if is_data_science %} and the Appraisal Form{% endif %} using the button{{ is_data_science|yesno:"s," }} below.
+                    </p>
+
+                    <div class="registration-info">
+                        <h4 style="margin-bottom: 20px; color: #333;">
+                            <i class="fa fa-info-circle"></i> Registration Details
+                        </h4>
+                        <div class="info-row">
+                            <span class="info-label">Registration ID:</span>
+                            <span class="info-value"><strong>#{{ registration.id }}</strong></span>
+                        </div>
+                        <div class="info-row">
+                            <span class="info-label">Candidate Name:</span>
+                            <span class="info-value">{{ registration.candidate_name }}</span>
+                        </div>
+                        <div class="info-row">
+                            <span class="info-label">Email:</span>
+                            <span class="info-value">{{ registration.email }}</span>
+                        </div>
+                        <div class="info-row">
+                            <span class="info-label">Contact Number:</span>
+                            <span class="info-value">{{ registration.contact_number }}</span>
+                        </div>
+                        <div class="info-row">
+                            <span class="info-label">Course:</span>
+                            <span class="info-value">{{ registration.course.name }}</span>
+                        </div>
+                        <div class="info-row">
+                            <span class="info-label">Registration Date:</span>
+                            <span class="info-value">{{ registration.created_at|date:"d M Y, h:i A" }}</span>
+                        </div>
+                    </div>
+
+                    <div class="action-buttons">
+                        <a href="{% url 'boardreg:download_pdf' registration.id %}" class="btn-download-primary">
+                            <i class="fa fa-download"></i> Download Registration PDF
+                        </a>
+                        {% if is_data_science %}
+                        <a href="{% url 'boardreg:download_appraisal' registration.id %}" class="btn-download-primary" style="background: linear-gradient(135deg, #1a237e 0%, #000000 100%);">
+                            <i class="fa fa-file-pdf-o"></i> Download Appraisal Form
+                        </a>
+                        {% endif %}
+                        <br>
+                        <a href="{% url 'boardreg:dashboard' %}" class="btn-secondary">
+                            <i class="fa fa-dashboard"></i> View Dashboard
+                        </a>
+                        <a href="{% url 'boardreg:boardreg' %}" class="btn-secondary">
+                            <i class="fa fa-plus"></i> New Registration
+                        </a>
+                    </div>
+
+                    <div style="margin-top: 30px; padding-top: 30px; border-top: 1px solid #dee2e6;">
+                        <p style="color: #6c757d; font-size: 14px; margin: 0;">
+                            <i class="fa fa-envelope"></i> A confirmation email has been sent to <strong>{{
+                                registration.email }}</strong>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Main content End -->
+
+    <!-- Footer Start -->
+    <footer id="rs-footer" class="rs-footer">
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="row y-middle">
+                    <div class="col-lg-12 text-center">
+                        <div class="copyright">
+                            <p>&copy; 2026 Koushal. All Rights Reserved.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Footer End -->
+
+    <!-- modernizr js -->
+    <script src="{% static 'web/boardregjs/modernizr-2.8.3.min.js' %}"></script>
+    <!-- jquery latest version -->
+    <script src="{% static 'web/boardregjs/jquery.min.js' %}"></script>
+    <!-- Bootstrap v4.4.1 js -->
+    <script src="{% static 'web/boardregjs/bootstrap.min.js' %}"></script>
+    <!-- Menu js -->
+    <script src="{% static 'web/boardregjs/rsmenu-main.js' %}"></script>
+    <!-- main js -->
+    <script src="{% static 'web/boardregjs/main.js' %}"></script>
+</body>
+
+</html>

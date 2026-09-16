@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+
+<head>
+    <!-- meta tag -->
+    <meta charset="utf-8">
+    <title>Registration Dashboard - Koushal</title>
+    <meta name="description" content="">
+    <!-- responsive tag -->
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- favicon -->
+    <link rel="apple-touch-icon" href="apple-touch-icon.html">
+    <link rel="shortcut icon" type="image/x-icon" href="{% static 'web/images/unv/logo.png' %}">
+    <!-- Bootstrap v4.4.1 css -->
+    <link rel="stylesheet" type="text/css" href="{% static 'web/boardregcss/bootstrap.min.css' %}">
+    <!-- font-awesome css -->
+    <link rel="stylesheet" type="text/css" href="{% static 'web/boardregcss/font-awesome.min.css' %}">
+    <!-- animate css -->
+    <link rel="stylesheet" type="text/css" href="{% static 'web/boardregcss/animate.css' %}">
+    <!-- off canvas css -->
+    <link rel="stylesheet" type="text/css" href="{% static 'web/boardregcss/off-canvas.css' %}">
+    <!-- linea-font css -->
+    <link rel="stylesheet" type="text/css" href="{% static 'web/fonts/linea-fonts.css' %}">
+    <!-- flaticon css  -->
+    <link rel="stylesheet" type="text/css" href="{% static 'web/fonts/flaticon.css' %}">
+    <!-- Main Menu css -->
+    <link rel="stylesheet" href="{% static 'web/boardregcss/rsmenu-main.css' %}">
+    <!-- spacing css -->
+    <link rel="stylesheet" type="text/css" href="{% static 'web/boardregcss/rs-spacing.css' %}">
+    <!-- style css -->
+    <link rel="stylesheet" type="text/css" href="{% static 'web/boardregcss/style.css' %}">
+    <!-- responsive css -->
+    <link rel="stylesheet" type="text/css" href="{% static 'web/boardregcss/responsive.css' %}">
+
+    <style>
+        :root {
+            --theme-primary: #002147;
+            --theme-primary-light: #003366;
+            --theme-primary-dark: #001a38;
+            --theme-accent: #0a4d7a;
+            --theme-bg: #f5f7fa;
+            --theme-text: #1e293b;
+            --theme-muted: #64748b;
+        }
+
+        body { background: var(--theme-bg); }
+
+        .dashboard-container {
+            padding: 40px 0 60px;
+            min-height: 70vh;
+        }
+
+        .dashboard-header {
+            background: var(--theme-primary);
+            color: white;
+            padding: 28px 32px;
+            border-radius: 12px;
+            margin-bottom: 28px;
+            box-shadow: 0 4px 14px rgba(0, 33, 71, 0.25);
+        }
+
+        .dashboard-header h1 {
+            margin: 0;
+            font-size: 28px;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            color: #fff;
+        }
+
+        .dashboard-header p {
+            margin: 8px 0 0 0;
+            opacity: 0.92;
+            font-size: 0.95rem;
+        }
+
+        .stats-card {
+            background: white;
+            padding: 24px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 33, 71, 0.08);
+            margin-bottom: 20px;
+            border-left: 4px solid var(--theme-primary);
+        }
+
+        .stats-number {
+            font-size: 34px;
+            font-weight: 700;
+            color: var(--theme-primary);
+        }
+
+        .table-container {
+            background: white;
+            padding: 28px 32px;
+            border-radius: 12px;
+            box-shadow: 0 2px 12px rgba(0, 33, 71, 0.08);
+        }
+
+        .table-container h3 {
+            color: var(--theme-primary);
+            font-weight: 700;
+        }
+
+        .table { margin-bottom: 0; }
+
+        .table thead th {
+            background: var(--theme-primary);
+            color: white;
+            border: none;
+            font-weight: 600;
+            padding: 14px 16px;
+            font-size: 0.9rem;
+        }
+
+        .table tbody td {
+            padding: 14px 16px;
+            vertical-align: middle;
+            color: var(--theme-text);
+        }
+
+        .table tbody tr:hover {
+            background-color: rgba(0, 33, 71, 0.04);
+        }
+
+        .btn-download {
+            background: var(--theme-primary);
+            color: white;
+            border: none;
+            padding: 8px 18px;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 0.875rem;
+            transition: all 0.2s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-download:hover {
+            background: var(--theme-primary-light);
+            box-shadow: 0 4px 12px rgba(0, 33, 71, 0.3);
+            color: white;
+            text-decoration: none;
+        }
+
+        .btn-back {
+            background: var(--theme-muted);
+            color: white;
+            border: none;
+            padding: 10px 22px;
+            border-radius: 6px;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-block;
+            margin-bottom: 22px;
+            transition: background 0.2s ease;
+        }
+
+        .btn-back:hover {
+            background: var(--theme-primary);
+            color: white;
+            text-decoration: none;
+        }
+
+        .badge-status {
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .badge-success {
+            background: #0d9488;
+            color: white;
+        }
+
+        .no-data {
+            text-align: center;
+            padding: 50px 20px;
+            color: var(--theme-muted);
+        }
+
+        .no-data i {
+            font-size: 56px;
+            margin-bottom: 16px;
+            opacity: 0.4;
+            color: var(--theme-primary);
+        }
+    </style>
+</head>
+
+<body class="defult-home">
+
+    <header class="dashboard-page-header" style="background:#fff;box-shadow:0 1px 12px rgba(0,33,71,0.08);padding:14px 0;">
+        <div class="container">
+            <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;">
+                <a href="{% url 'web:index' %}" style="display:inline-block;">
+                    <img src="{% static 'web/images/unv/logo.png' %}" alt="Logo" style="height:42px;width:auto;display:block;">
+                </a>
+                <nav style="display:flex;gap:22px;align-items:center;">
+                    <a href="{% url 'web:index' %}" style="color:#002147;text-decoration:none;font-weight:600;font-size:0.95rem;">Home</a>
+                    <a href="#" style="color:#002147;text-decoration:none;font-weight:600;font-size:0.95rem;">About</a>
+                    <a href="#" style="color:#002147;text-decoration:none;font-weight:600;font-size:0.95rem;">Course</a>
+                    <a href="{% url 'boardreg:boardreg' %}" style="color:#002147;text-decoration:none;font-weight:600;font-size:0.95rem;">Registration</a>
+                    <a href="{% url 'boardreg:dashboard' %}" style="color:#002147;text-decoration:none;font-weight:700;font-size:0.95rem;">Dashboard</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main content Start -->
+    <div class="main-content">
+        <div class="dashboard-container">
+            <div class="container-fluid">
+                <div class="dashboard-header">
+                    <h1><i class="fa fa-dashboard"></i> Registration Dashboard</h1>
+                    <p style="margin: 10px 0 0 0; opacity: 0.9;">View and manage all board registrations</p>
+                </div>
+
+                <a href="{% url 'boardreg:boardreg' %}" class="btn-back">
+                    <i class="fa fa-arrow-left"></i> Back to Registration Form
+                </a>
+                <!-- search -->
+                
+
+                <div class="row mb-4">
+                    <div class="col-md-4">
+                        <div class="stats-card">
+                            <div class="stats-number">{{ registrations.count }}</div>
+                            <div style="color: #6c757d; font-weight: 600;">Total Registrations</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="table-container">
+                    <h3 style="margin-bottom: 20px; color: #333;">
+                        <i class="fa fa-list"></i> All Registrations
+                    </h3>
+
+                    {% if registrations %}
+                    <div class="table-responsive">
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Candidate Name</th>
+                                    <th>Email</th>
+                                    <th>Contact</th>
+                                    <th>Course</th>
+                                    <th>Registration Date</th>
+                                    <th>Status</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for registration in registrations %}
+                                <tr>
+                                    <td><strong>#{{ registration.id }}</strong></td>
+                                    <td>{{ registration.candidate_name }}</td>
+                                    <td>{{ registration.email }}</td>
+                                    <td>{{ registration.contact_number }}</td>
+                                    <td>{{ registration.course.name }}</td>
+                                    <td>{{ registration.created_at|date:"d M Y, h:i A" }}</td>
+                                    <td>
+                                        <span class="badge-status badge-success">
+                                            <i class="fa fa-check-circle"></i> Submitted
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <a href="{% url 'boardreg:download_pdf' registration.id %}"
+                                            class="btn-download">
+                                            <i class="fa fa-download"></i> Download PDF
+                                        </a>
+                                        {% if registration.is_data_science %}
+                                        <a href="{% url 'boardreg:download_appraisal' registration.id %}"
+                                            class="btn-download" style="margin-left: 6px;">
+                                            <i class="fa fa-file-pdf-o"></i> Appraisal
+                                        </a>
+                                        {% endif %}
+                                    </td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                    {% else %}
+                    <div class="no-data">
+                        <i class="fa fa-inbox"></i>
+                        <h4>No Registrations Found</h4>
+                        <p>There are no registrations yet. Start by creating a new registration.</p>
+                        <a href="{% url 'boardreg:boardreg' %}" class="btn-download" style="margin-top: 20px;">
+                            <i class="fa fa-plus"></i> Create New Registration
+                        </a>
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Main content End -->
+
+    <!-- Footer Start -->
+    <footer id="rs-footer" class="rs-footer">
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="row y-middle">
+                    <div class="col-lg-12 text-center">
+                        <div class="copyright">
+                            <p>&copy; 2026 Koushal. All Rights Reserved.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Footer End -->
+
+    <!-- modernizr js -->
+    <script src="{% static 'web/boardregjs/modernizr-2.8.3.min.js' %}"></script>
+    <!-- jquery latest version -->
+    <script src="{% static 'web/boardregjs/jquery.min.js' %}"></script>
+    <!-- Bootstrap v4.4.1 js -->
+    <script src="{% static 'web/boardregjs/bootstrap.min.js' %}"></script>
+    <!-- Menu js -->
+    <script src="{% static 'web/boardregjs/rsmenu-main.js' %}"></script>
+    <!-- main js -->
+    <script src="{% static 'web/boardregjs/main.js' %}"></script>
+</body>
+
+</html>
