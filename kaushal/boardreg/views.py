@@ -269,12 +269,12 @@ def download_appraisal_form(request, registration_id):
         raise Http404('Appraisal form PDF not found.')
 
     student_name = _title_case(registration.candidate_name)
-    register_no = _title_case(
+    register_no = (
         (getattr(registration, 'register_no', None) or '').strip() or str(registration.id)
-    )
-    internship_id = _title_case(
+    ).upper()
+    internship_id = (
         (getattr(registration, 'internship_id', None) or '').strip() or register_no
-    )
+    ).upper()
     email = (registration.email or '').strip().lower()
     batch = ''
     if registration.session and registration.session.name:
@@ -282,7 +282,7 @@ def download_appraisal_form(request, registration_id):
     elif registration.month_session:
         year = registration.created_at.year if registration.created_at else ''
         batch = _title_case(f"{registration.month_session} {year}".strip())
-    # Section 19 uses download date; Section 18 Date left blank for student to write
+    # Section 19 Date = download date; Section 20 Institute Date left blank for handwriting
     download_date = date.today().strftime('%d-%m-%Y')
 
     # Prefer Lexend if already registered for admission PDF; else Helvetica
@@ -297,36 +297,40 @@ def download_appraisal_form(request, registration_id):
     page_w = float(reader.pages[0].mediabox.width)
     page_h = float(reader.pages[0].mediabox.height)
 
-    # Overlay canvas — letter-sized pages matching template (612 x 792)
+    # Overlay canvas — match current template page size (A4: ~595 x 842)
     overlay_buf = BytesIO()
     c = pdf_canvas.Canvas(overlay_buf, pagesize=(page_w, page_h))
     c.setFillColorRGB(0, 0, 0)
+    c.setFont(font_name, 11)
 
-    # pdfminer y0 is slightly below ReportLab text baseline; lift so values sit on the label line
+    # pdfminer y0 is slightly below ReportLab baseline; small lift keeps values on the label line
     y_fix = 3.0
-    # Same value column as Agreement Parties (Institute Name / Program)
-    value_x = 245.8
+    # Agreement Parties value column (same x as NATDEMY / Program)
+    parties_value_x = 216.1
 
     # --- Page 1 (index 0): AGREEMENT PARTIES ---
-    c.setFont(font_name, 11)
-    c.drawString(value_x, 388.0 + y_fix, student_name[:60])
-    c.drawString(value_x, 362.8 + y_fix, register_no[:40])
-    c.drawString(value_x, 337.3 + y_fix, batch[:40])
+    c.drawString(parties_value_x, 443.8 + y_fix, student_name[:60])
+    c.drawString(parties_value_x, 416.0 + y_fix, register_no[:40])
+    c.drawString(parties_value_x, 388.4 + y_fix, batch[:40])
     c.showPage()
 
-    # Blank overlays for middle pages (1..5)
-    for _ in range(1, 6):
+    # Blank overlays for middle pages (1..6) — template has 8 pages total
+    middle_count = max(0, len(reader.pages) - 2)
+    for _ in range(middle_count):
         c.showPage()
 
-    # --- Page 7 (index 6): Section 18 student fields (Date left blank) ---
+    # --- Last page: Section 19 student fields + Section 20 institute date ---
+    # Layout: Student Name | Register No
+    #         Student Signature | Email Address
+    #         Date | Internship ID
     c.setFont(font_name, 11)
-    c.drawString(162.0, 510.4 + y_fix, student_name[:42])
-    c.drawString(396.0, 510.4 + y_fix, email[:36])
-    c.drawString(150.0, 469.1 + y_fix, register_no[:36])
-    c.drawString(390.0, 469.1 + y_fix, internship_id[:36])
-    # Section 18 Date: intentionally blank (student fills by hand)
-    # Section 19 Institute Date: download date, same start-x as Name / Designation values
-    c.drawString(178.2, 154.9 + y_fix, download_date)
+    c.drawString(168.0, 527.8 + y_fix, student_name[:40])          # after Student Name:
+    c.drawString(402.0, 527.8 + y_fix, register_no[:28])           # after Register No:
+    # Student Signature left blank
+    c.drawString(420.0, 493.3 + y_fix, email[:32])                 # after Email Address:
+    c.drawString(120.0, 458.4 + y_fix, download_date)              # Date (download date)
+    c.drawString(412.0, 458.4 + y_fix, internship_id[:28])         # after Internship ID:
+    # Section 20 Institute Date left blank (handwritten); Name/Designation already in template
     c.showPage()
     c.save()
     overlay_buf.seek(0)
